@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lt | awk '{if (NR<=10) print $NF}'
+ls -lt | grep -v '^d' | awk 'NR>1{print $NF}' | head -n 10
